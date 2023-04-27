@@ -1,16 +1,17 @@
 package com.example.simplemvccrud.DTO;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import com.example.simplemvccrud.Enums.Role;
+import lombok.*;
+
 @Builder
 @Data
-@RequiredArgsConstructor
+
+@AllArgsConstructor
 public class UserDTO {
     private Long userId;
     private String username;
     private String password;
-    private Enum Role;
+    private Role role;
 
 
 }

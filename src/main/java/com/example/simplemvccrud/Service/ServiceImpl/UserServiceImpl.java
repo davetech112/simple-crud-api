@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
                 .userId(userdto.getUserId())
                 .username(userdto.getUsername())
                 .password(userdto.getPassword())
-                .Role(userdto.getRole())
+                .role(userdto.getRole())
                 .build();
         return user;
     }
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
                 .userId(user.getUserId())
                 .username(user.getUsername())
                 .password(user.getPassword())
-                .Role(user.getRole())
+                .role(user.getRole())
                 .build();
         return userDTO;
     }

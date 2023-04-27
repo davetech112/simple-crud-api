@@ -1,5 +1,6 @@
 package com.example.simplemvccrud.Model;
 
+import com.example.simplemvccrud.Enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,6 +23,6 @@ public class Users {
     private String password;
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Enum Role;
+    private Role role;
 
 }
