@@ -2,6 +2,7 @@ package com.example.simplemvccrud.controllers;
 
 import com.example.simplemvccrud.DTO.UserDTO;
 import com.example.simplemvccrud.Service.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,5 +34,10 @@ public class UserController {
     public ResponseEntity<String> delete(@PathVariable("id") Long id){
         userService.delete( id);
         return new ResponseEntity<>("User deleted successfully", HttpStatus.OK);
+    }
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout(HttpSession session) {
+        session.invalidate();
+        return new ResponseEntity<>("Logout Successful",HttpStatus.OK);
     }
 }
