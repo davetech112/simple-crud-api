@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public OpenAPI api(){
         return new OpenAPI()
                 .info(new Info()
-                        .title("User")
+                        .title("Users")
                         .description("Api for user")
                         .version(version));
     }
