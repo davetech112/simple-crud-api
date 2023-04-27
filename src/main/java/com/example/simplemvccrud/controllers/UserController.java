@@ -18,18 +18,16 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<UserDTO> login(@RequestBody UserDTO userDTO){
-        userService.login(userDTO);
-        return new ResponseEntity<>(userDTO, HttpStatus.OK);
+        return new ResponseEntity<>(userService.login(userDTO), HttpStatus.OK);
     }
     @PostMapping("/signup")
     public ResponseEntity<UserDTO> signup(@RequestBody UserDTO userDTO){
-        userService.signup(userDTO);
-        return new ResponseEntity<>(userDTO, HttpStatus.OK);
+        return new ResponseEntity<>(userService.signup(userDTO), HttpStatus.OK);
     }
     @PostMapping("/{id}/update")
     public ResponseEntity<UserDTO> update(@PathVariable("id") Long id, @RequestBody UserDTO userDTO){
-        userService.update(id);
-        return new ResponseEntity<>(userDTO, HttpStatus.OK);
+
+        return new ResponseEntity<>(userService.update(id), HttpStatus.OK);
     }
     @PostMapping("/{id}/delete")
     public ResponseEntity<String> delete(@PathVariable("id") Long id){
